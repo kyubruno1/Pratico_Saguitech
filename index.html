@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(Prático Saguitech) Emissão de NFS-e</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="form-container" class="container">
+        <h1>Emissão de Nota Fiscal de Serviço (NFS-e)</h1>
+        <form id="nfse-form">
+            <label for="valorVenda">Valor da Venda:</label>
+            <input type="number" id="valorVenda" step="0.01" required>
+
+            <label for="itens">Itens Vendidos:</label>
+            <input type="text" id="itens" required>
+
+            <label for="irpf">Porcentagem do IRPF (%):</label>
+            <input type="number" id="irpf" step="0.01" required>
+
+            <label for="pis">Porcentagem do PIS (%):</label>
+            <input type="number" id="pis" step="0.01" required>
+
+            <label for="cofins">Porcentagem do COFINS (%):</label>
+            <input type="number" id="cofins" step="0.01" required>
+
+            <label for="inss">Porcentagem do INSS (%):</label>
+            <input type="number" id="inss" step="0.01" required>
+
+            <label for="issqn">Porcentagem do ISSQN (%):</label>
+            <input type="number" id="issqn" step="0.01" required>
+
+            <button type="button" onclick="gerarNotaFiscal()">Gerar Nota Fiscal</button>
+            <button id="toggleHistoricoButton" type="button" onclick="toggleHistorico()">Abrir Histórico</button>
+        </form>
+
+        <div id="nfse" class="nfse" style="display: none;"></div>
+    </div>
+
+    <div id="historico" class="history">
+        <h2>Histórico de Notas Fiscais</h2>
+        <div id="historico-list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
